@@ -1,0 +1,53 @@
+{
+    "greeting": [
+        "Hello",
+        "I am Tommy"
+    ],
+    "about": "I am a full-stack web developer based in _Provo, Utah_.\nI am a _linguist_ by heart and a _programmer_ by trade.\nI love monkeys, foxes, books, and _clean code_.",
+    "stack": [
+        {
+            "bullet": "<front-end />",
+            "name": "React"
+        },
+        {
+            "bullet": "{http}",
+            "name": "GraphQL"
+        },
+        {
+            "bullet": "(server)",
+            "name": "Node"
+        },
+        {
+            "bullet": "[database]",
+            "name": "PostgreSQL"
+        }
+    ],
+    "skills": [
+        {
+            "name": "_Front-end_ web development"
+        },
+        {
+            "name": "_Back-end_ web development"
+        },
+        {
+            "name": "Relational _data modeling_"
+        },
+        {
+            "name": "_Database design_ & development"
+        }
+    ],
+    "links": [
+        {
+            "name": "LinkedIn",
+            "href": "https://linkedin.com/in/thomasglowry"
+        },
+        {
+            "name": "GitHub",
+            "href": "https://github.com/tommydreamer57"
+        },
+        {
+            "name": "Email",
+            "href": "mailto:thomas@lowrysoftware.com"
+        }
+    ]
+}

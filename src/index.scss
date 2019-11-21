@@ -1,0 +1,175 @@
+@import "./variables.scss";
+
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+    font-family: "Source Code Pro", "Shojumaru", "Aladin", "Sedgwick Ave Display", "Ubuntu Mono", "Lacquer", "Itim",
+        "Anonymous Pro", "McLaren", "Maven Pro", monospace;
+    background: $xx-dark-gray;
+    color: $light-gray;
+
+    #App {
+        height: 100%;
+        width: 100%;
+
+        .view {
+            // height: 90vh;
+            width: calc(70vw - #{$xxx-large});
+            padding: 15vh 15vw;
+            margin-bottom: 25vh;
+            display: flex;
+            flex-direction: column;
+
+            .content {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .red {
+            color: $light-red;
+        }
+
+        .blue {
+            color: $x-light-blue;
+        }
+
+        #greeting {
+            margin-top: 15vh;
+            // padding: $xxx-large;
+            justify-content: center;
+            // align-items: center;
+            font-size: $xxx-large * 4;
+            color: $light-gray;
+            // text-shadow: $xx-small $xx-small 0 transparentize($medium-red, 0.5);
+
+            .content {
+                // margin-left: 25vw;
+
+                .greeting-line {
+                }
+            }
+        }
+
+        #about {
+            .content {
+                // margin-right: 15vw;
+                align-items: flex-end;
+
+                p {
+                    line-height: 175%;
+                    font-size: $x-large;
+                    font-weight: lighter;
+                }
+            }
+        }
+
+        #skills-stack {
+            .content {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+                align-content: space-between;
+
+                .card {
+                    background: mix($dark-gray, $x-dark-gray, 0.5);
+                    box-shadow: 0 0 $x-large $small $xxx-dark-gray;
+                    width: 25vw;
+                    padding: $xxx-large;
+
+                    + .card {
+                        margin-top: 25%;
+                        margin-left: 5%;
+                    }
+
+                    .title {
+                        // text-align: right;
+                        font-size: $xxx-large;
+                        font-weight: bold;
+                        margin-bottom: $xxx-large;
+                    }
+
+                    .card-content {
+                        // margin-left: 10vw;
+                        // height: 80vh;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        font-size: $x-large;
+
+                        .card-item {
+                            // width: 45vw;
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: $large;
+
+                            .bullet {
+                                margin-right: $xx-large;
+                            }
+                        }
+                    }
+                }
+
+                #my-stack {
+                    // margin-left: 15vw;
+                }
+
+                #my-skills {
+                    .card-content {
+                        .card-item {
+                        }
+                    }
+                }
+            }
+        }
+
+        #sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            height: 100vh;
+            width: $xxx-large;
+            max-height: 100vh;
+            padding: $large;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            // writing-mode: vertical-rl;
+
+            background: $xxx-dark-gray;
+            border-left: 1px solid black;
+
+            .sidebar-link-wrapper {
+                transform: rotate(90deg);
+                width: 100vh;
+                min-width: 100vh;
+                display: flex;
+                // justify-content: space-evenly;
+                font-family: "Anonymous Pro";
+
+                .sidebar-link {
+                    position: relative;
+                    padding: $small $large;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: $xxx-large + 2 * $large;
+                    padding: 0 $xxx-large;
+                    font-size: $x-large;
+                    color: $light-gray;
+                    cursor: default;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: white;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro|Source+Code+Pro|Itim|Aladin|Shojumaru|McLaren|Lacquer|Maven+Pro|Sedgwick+Ave+Display|Ubuntu+Mono&display=swap');
+
+// COLORS
+
+$xxx-dark-gray: #1a1a1a;
+$xx-dark-gray: #222222;
+$x-dark-gray: #333333;
+$dark-gray: #444444;
+$medium-gray: #888888;
+$light-gray: #cccccc;
+$x-light-gray: #eeeeee;
+
+$dark-purple: #220099;
+$medium-purple: #5500bb;
+$light-purple: #7700dd;
+$x-light-purple: #9900ff;
+
+$dark-blue: #0011aa;
+$medium-blue: #0044dd;
+$light-blue: #0077ff;
+$x-light-blue: #00aaff;
+
+$dark-red: #aa0000;
+$medium-red: #dd2211;
+$light-red: #ff4422;
+$x-light-red: #ff6633;
+
+// SIZES
+
+$base-size: 1rem;
+
+$small: $base-size * 0.75;
+$x-small: $small * 0.75;
+$xx-small: $x-small * 0.75;
+$xxx-small: $xx-small * 0.75;
+
+$large: $base-size * 1.25;
+$x-large: $large * 1.25;
+$xx-large: $x-large * 1.25;
+$xxx-large: $xx-large * 1.25;

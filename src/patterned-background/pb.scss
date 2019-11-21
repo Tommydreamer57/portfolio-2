@@ -1,0 +1,120 @@
+@import "../variables.scss";
+
+#root {
+    overflow-x: hidden;
+    height: fit-content;
+    background: black;
+
+    .App {
+        display: flex;
+        flex-direction: column;
+        padding: 1vw;
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5vw;
+            overflow-y: hidden;
+            overflow-x: visible;
+
+            .color-wrapper {
+                height: 100%;
+                width: fill;
+
+                .color {
+                    transform: rotate(-50deg);
+                    height: 100%;
+                    width: 90%;
+                    border-radius: -2vw;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    // transition: all 0.2s;
+                    pointer-events: none;
+                    // opacity: 0.25;
+
+                    .number {
+                        height: 30%;
+                        width: 100%;
+                        // border-radius: 100%;
+                        font-weight: bold;
+                        font-size: 2vw;
+                        font-family: monospace;
+                        // transition: all 0.2s;
+                        background: black;
+                        color: transparent;
+                    }
+                }
+
+                &:hover {
+                    .color {
+                        // transform: rotate(130deg);
+                        transform: rotate(50deg);
+                    }
+                }
+
+                &:nth-child(1) {
+                    .color {
+                        background: $dark-blue;
+                    }
+                }
+                &:nth-child(2) {
+                    .color {
+                        background: $medium-blue;
+                    }
+                }
+                &:nth-child(3) {
+                    .color {
+                        background: $light-blue;
+                    }
+                }
+                &:nth-child(4) {
+                    .color {
+                        background: $x-light-blue;
+                    }
+                }
+                &:nth-child(5) {
+                    .color {
+                        background: $dark-purple;
+                    }
+                }
+                &:nth-child(6) {
+                    .color {
+                        background: $medium-purple;
+                    }
+                }
+                &:nth-child(7) {
+                    .color {
+                        background: $light-purple;
+                    }
+                }
+                &:nth-child(8) {
+                    .color {
+                        background: $x-light-purple;
+                    }
+                }
+                &:nth-child(9) {
+                    .color {
+                        background: $dark-red;
+                    }
+                }
+                &:nth-child(10) {
+                    .color {
+                        background: $medium-red;
+                    }
+                }
+                &:nth-child(11) {
+                    .color {
+                        background: $light-red;
+                    }
+                }
+                &:nth-child(12) {
+                    .color {
+                        background: $x-light-red;
+                    }
+                }
+            }
+        }
+    }
+}
