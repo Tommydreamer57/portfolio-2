@@ -18,13 +18,25 @@ body,
             // height: 90vh;
             width: calc(70vw - #{$xxx-large});
             padding: 15vh 15vw;
-            margin-bottom: 25vh;
+            margin-bottom: 15vh;
             display: flex;
             flex-direction: column;
+
+            &:first-child {
+                margin-top: 15vh;
+            }
+            // &:last-child {
+            //     margin-bottom: 45vh;
+            // }
 
             .content {
                 display: flex;
                 flex-direction: column;
+
+                > :nth-child(odd) {
+                    align-self: flex-end;
+                    align-items: flex-end;
+                }
             }
         }
 
@@ -37,7 +49,6 @@ body,
         }
 
         #greeting {
-            margin-top: 15vh;
             // padding: $xxx-large;
             justify-content: center;
             // align-items: center;
@@ -49,6 +60,7 @@ body,
                 // margin-left: 25vw;
 
                 .greeting-line {
+                    align-self: flex-start;
                 }
             }
         }
@@ -56,31 +68,23 @@ body,
         #about {
             .content {
                 // margin-right: 15vw;
-                align-items: flex-end;
+                align-items: flex-start;
 
-                p {
+                > p {
                     line-height: 175%;
                     font-size: $x-large;
                     font-weight: lighter;
+                    margin-bottom: 25vh;
                 }
-            }
-        }
-
-        #skills-stack {
-            .content {
-                flex-direction: row;
-                align-items: flex-start;
-                justify-content: space-between;
-                align-content: space-between;
 
                 .card {
                     background: mix($dark-gray, $x-dark-gray, 0.5);
-                    box-shadow: 0 0 $x-large $small $xxx-dark-gray;
+                    box-shadow: 0 0 $xxx-large $small $xxx-dark-gray;
                     width: 25vw;
-                    padding: $xxx-large;
+                    padding: $xxx-large * 1.5;
 
                     + .card {
-                        margin-top: 25%;
+                        margin-top: -10vh;
                         margin-left: 5%;
                     }
 
@@ -88,7 +92,7 @@ body,
                         // text-align: right;
                         font-size: $xxx-large;
                         font-weight: bold;
-                        margin-bottom: $xxx-large;
+                        margin-bottom: $xxx-large * 1.5;
                     }
 
                     .card-content {
@@ -103,7 +107,10 @@ body,
                             // width: 45vw;
                             display: flex;
                             justify-content: space-between;
-                            margin-bottom: $large;
+
+                            &:not(:last-child) {
+                                margin-bottom: $xxx-large;
+                            }
 
                             .bullet {
                                 margin-right: $xx-large;
@@ -112,14 +119,48 @@ body,
                     }
                 }
 
-                #my-stack {
-                    // margin-left: 15vw;
-                }
+                // #my-stack {
+                //     margin-left: 15vw;
+                // }
 
-                #my-skills {
-                    .card-content {
-                        .card-item {
-                        }
+                // #my-skills {
+                //     .card-content {
+                //         .card-item {
+                //         }
+                //     }
+                // }
+            }
+        }
+
+        #work {
+            .title {
+                font-size: $xxx-large * 2;
+                margin-bottom: 15vh;
+            }
+            .content {
+                .project {
+                    // margin: 5vh 10vw;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    align-content: flex-start;
+                    flex-direction: column;
+                    width: 40vw;
+                    margin-bottom: 15vh;
+
+                    &:nth-child(odd) {
+                        align-self: flex-end;
+                        align-items: flex-end;
+                    }
+                    .title {
+                        font-size: $xxx-large * 1.5;
+                        width: fit-content;
+                        margin-bottom: $xxx-large;
+                    }
+                    .sub-title {
+                        font-size: $xx-large;
+                    }
+                    .project-content {
                     }
                 }
             }

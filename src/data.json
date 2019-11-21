@@ -1,8 +1,5 @@
 {
-    "greeting": [
-        "Hello",
-        "I am Tommy"
-    ],
+    "greeting": "Hello\nI am Tommy",
     "about": "I am a full-stack web developer based in _Provo, Utah_.\nI am a _linguist_ by heart and a _programmer_ by trade.\nI love monkeys, foxes, books, and _clean code_.",
     "stack": [
         {
@@ -34,6 +31,23 @@
         },
         {
             "name": "_Database design_ & development"
+        },
+        {
+            "name": "Teaching & _Mentorship_"
+        }
+    ],
+    "work": [
+        {
+            "name": "Glascad",
+            "subTitle": "Shop Drawing Generator"
+        },
+        {
+            "name": "North Star",
+            "subTitle": "Conference App"
+        },
+        {
+            "name": "DevMountain",
+            "subTitle": "Student Info API"
         }
     ],
     "links": [

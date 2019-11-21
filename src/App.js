@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import data from './data.json';
 
 const {
-    links,
     greeting,
+    about,
     stack,
     skills,
-    about,
+    work,
+    links,
 } = data;
 
 const emphasizeText = text => text.split(/_/g)
@@ -27,18 +28,10 @@ export default function App() {
                 className="view"
             >
                 <div className="content">
-                    {greeting.map((text, i) => (
+                    {greeting.split(/\n/g).map((text, i) => (
                         <div className="greeting-line">
                             <span className="greeting-text">
-                                {text}
-                                {/* {text.split(' ').map((word, i, { length }) => (
-                                    <span
-                                        className={word.match(/t(h?)om/i) ? 'blue-underline' : ''}
-                                    >
-                                        {word}
-                                        {i === length - 1 ? null : <span>&nbsp;</span>}
-                                    </span>
-                                ))} */}
+                                {emphasizeText(text)}
                             </span>
                             {i === 0 ? (
                                 <span className="red">.</span>
@@ -60,14 +53,15 @@ export default function App() {
                             </p>
                         ))}
                     </p>
-                </div>
-            </div>
-            {/* STACK */}
-            <div
+                    {/* </div>
+            </div> */}
+                    {/* STACK */}
+                    {/* <div
                 id="skills-stack"
                 className="view"
             >
-                <div className="content">
+                <div className="content"> */}
+                    {/* STACK */}
                     <div
                         id="my-stack"
                         className="card"
@@ -81,16 +75,17 @@ export default function App() {
                         <div className="card-content">
                             {stack.map(({ bullet, name }) => (
                                 <div className="card-item">
-                                    <span className="bullet blue">
-                                        {bullet}
+                                    <span className="bullet">
+                                        {emphasizeText(bullet)}
                                     </span>
-                                    <span>
+                                    <span className="blue">
                                         {name}
                                     </span>
                                 </div>
                             ))}
                         </div>
                     </div>
+                    {/* SKILLS */}
                     <div
                         id="my-skills"
                         className="card"
@@ -111,6 +106,31 @@ export default function App() {
                             ))}
                         </div>
                     </div>
+                </div>
+            </div>
+            <div
+                id="work"
+                className="view"
+            >
+                <div className="title">
+                    <span>
+                        Featured Projects
+                    </span>
+                    <span className="red">:</span>
+                </div>
+                <div className="content">
+                    {work.map(({ name, subTitle }) => (
+                        <div className="project">
+                            <div className="title">
+                                {name}
+                            </div>
+                            <div className="sub-title blue">
+                                {subTitle}
+                            </div>
+                            <div className="project-content">
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
             {/* SIDEBAR */}
