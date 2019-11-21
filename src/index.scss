@@ -145,12 +145,20 @@ body,
                     align-items: flex-start;
                     align-content: flex-start;
                     flex-direction: column;
-                    width: 40vw;
+                    width: 30vw;
                     margin-bottom: 15vh;
 
-                    &:nth-child(odd) {
+                    &:nth-child(3n-2) {
+                        align-self: flex-start;
+                        align-items: flex-start;
+                    }
+                    &:nth-child(3n - 1) {
                         align-self: flex-end;
                         align-items: flex-end;
+                    }
+                    &:nth-child(3n) {
+                        align-self: center;
+                        align-items: flex-start;
                     }
                     .title {
                         font-size: $xxx-large * 1.5;
@@ -159,8 +167,27 @@ body,
                     }
                     .sub-title {
                         font-size: $xx-large;
+                        margin-bottom: $xxx-large;
                     }
                     .project-content {
+                        width: 100%;
+
+                        .project-image {
+                            width: 100%;
+                            background: black;
+                            background-position: center center;
+                            background-size: 100%;
+                            background-repeat: no-repeat;
+                        }
+                        #Glascad-image {
+                            background-image: url("./assets/Glascad.png");
+                        }
+                        #StudentInfo-image {
+                            background-image: url("./assets/Student Info.png");
+                        }
+                        #NorthStar-image {
+                            background-image: url("./assets/North Star.jpg");
+                        }
                     }
                 }
             }

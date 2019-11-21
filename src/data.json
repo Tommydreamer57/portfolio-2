@@ -1,6 +1,6 @@
 {
-    "greeting": "Hello\nI am Tommy",
-    "about": "I am a full-stack web developer based in _Provo, Utah_.\nI am a _linguist_ by heart and a _programmer_ by trade.\nI love monkeys, foxes, books, and _clean code_.",
+    "greeting": "Hello\nI am Tommy*.*",
+    "about": "I am a full-stack web developer based in _Provo, Utah_*.*\nI am a _linguist_ by heart and a _programmer_ by trade*.*\nI love monkeys, books, and _clean code_*.*",
     "stack": [
         {
             "bullet": "<front-end />",
@@ -39,15 +39,18 @@
     "work": [
         {
             "name": "Glascad",
-            "subTitle": "Shop Drawing Generator"
+            "subTitle": "Shop Drawing Generator",
+            "image": "Glascad"
         },
         {
             "name": "North Star",
-            "subTitle": "Conference App"
+            "subTitle": "Conference App",
+            "image": "NorthStar"
         },
         {
             "name": "DevMountain",
-            "subTitle": "Student Info API"
+            "subTitle": "Student Info API",
+            "image": "StudentInfo"
         }
     ],
     "links": [
