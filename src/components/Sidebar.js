@@ -4,22 +4,29 @@ import data from '../data.json';
 const { links } = data;
 
 export default function Sidebar() {
+
     const [hidden, setHidden] = useState(false);
+
     useEffect(() => {
+
         const hideSidebar = () => {
-            const contact = document.getElementById('contact');
 
-            const { top, bottom } = contact.getBoundingClientRect();
+            const about = document.getElementById('about');
 
-            const contactIsVisible = top <= window.innerHeight;
+            const { top, bottom } = about.getBoundingClientRect();
 
-            console.log({ top, bottom, contactIsVisible });
+            const aboutHasReachedHalfway = top <= window.innerHeight / 5;
 
-            setHidden(contactIsVisible);
+            console.log({ top, bottom, aboutHasReachedHalfway });
+
+            setHidden(aboutHasReachedHalfway);
         }
+
         window.addEventListener('scroll', hideSidebar);
+
         return () => window.removeEventListener('scroll', hideSidebar);
     }, []);
+
     return (
         <div
             id="sidebar"

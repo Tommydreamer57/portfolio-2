@@ -21,7 +21,6 @@ export default function App() {
                     />
                 </Switch>
                 <Contact />
-                <Sidebar />
             </div>
         </BrowserRouter>
     );

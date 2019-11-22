@@ -3,6 +3,7 @@ import About from './About';
 import Landing from './Landing';
 import Work from './Work';
 import useScrollPosition from '../../hooks/use-scroll-position';
+import Sidebar from '../../components/Sidebar';
 
 export default function Home() {
 
@@ -13,6 +14,7 @@ export default function Home() {
             <Landing />
             <About />
             <Work />
+            <Sidebar />
         </>
     );
 }
