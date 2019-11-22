@@ -24,7 +24,14 @@ export default function Work() {
                         to={`/${name.replace(/\s+/g, '')}`}
                     >
                         <div className="title">
-                            {name}
+                            <span>
+                                {name}
+                            </span>
+                            <span className="after">
+                                <span>&nbsp;></span>
+                                <span>></span>
+                                <span>></span>
+                            </span>
                         </div>
                         <div className="sub-title blue">
                             {subTitle}

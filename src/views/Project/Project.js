@@ -36,7 +36,15 @@ export default function Project({
             id="project"
             className="view"
         >
-            <div className="project-title title">
+            <Link
+                to="/"
+                className="project-title title"
+            >
+                <span className="before">
+                    <span>{'<'}</span>
+                    <span>{'<'}</span>
+                    <span>{'<'}&nbsp;</span>
+                </span>
                 <span>
                     {name}
                 </span>
@@ -44,13 +52,7 @@ export default function Project({
                 {/* <span className="subtitle blue">
                     {subTitle}
                 </span> */}
-                <Link
-                    to="/"
-                    className="project-back-link"
-                >
-                    Back
-                </Link>
-            </div>
+            </Link>
             <div className="sub-title blue">
                 {subTitle}
             </div>
