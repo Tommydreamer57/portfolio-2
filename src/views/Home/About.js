@@ -14,6 +14,12 @@ export default function About() {
             id="about"
             className="view"
         >
+            <div className="title">
+                <span>
+                    About Me
+                </span>
+                <span className="red">:</span>
+            </div>
             <div className="content">
                 <p>
                     {about.split(/\n/g).map(line => (

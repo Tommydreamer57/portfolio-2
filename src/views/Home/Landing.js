@@ -11,15 +11,15 @@ export default function Landing() {
             className="view"
         >
             <div className="content">
-                {greeting.split(/\n/g).map((text, i) => (
-                    <div className="greeting-line">
+                <div className="greeting-line">
+                    {/* {greeting.split(/\n/g).map((text, i) => ( */}
                         <span className="greeting-text">
                             <Text
-                                text={text}
+                                text={greeting}
                             />
                         </span>
-                    </div>
-                ))}
+                    {/* ))} */}
+                </div>
             </div>
         </div>
     );

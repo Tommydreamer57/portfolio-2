@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import * as images from '../../assets';
 import data from '../../data.json';
 
@@ -18,7 +19,10 @@ export default function Work() {
             </div>
             <div className="content">
                 {work.map(({ name, subTitle, image }) => (
-                    <div className="project">
+                    <Link
+                        className="project"
+                        to={`/${name.replace(/\s+/g, '')}`}
+                    >
                         <div className="title">
                             {name}
                         </div>
@@ -28,11 +32,11 @@ export default function Work() {
                         <div className="project-content">
                             <img
                                 className="project-image"
-                                // id={`${name.replace(/\s/g, '')}-image`}
+                                id={`${name.replace(/\s/g, '')}-image`}
                                 src={images[image]}
                             />
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

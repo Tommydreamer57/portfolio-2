@@ -3,15 +3,14 @@
 html,
 body,
 #root {
-    height: 100%;
     width: 100%;
+    overflow-x: hidden;
     font-family: "Source Code Pro", "Shojumaru", "Aladin", "Sedgwick Ave Display", "Ubuntu Mono", "Lacquer", "Itim",
         "Anonymous Pro", "McLaren", "Maven Pro", monospace;
     background: $xx-dark-gray;
     color: $light-gray;
 
     #App {
-        height: 100%;
         width: 100%;
 
         .view {
@@ -23,11 +22,18 @@ body,
             flex-direction: column;
 
             &:first-child {
-                margin-top: 15vh;
+                margin-top: 25vh;
             }
             // &:last-child {
             //     margin-bottom: 45vh;
             // }
+
+            .title {
+                font-size: $xxx-large * 2;
+                margin-bottom: 15vh;
+                padding-bottom: $xx-large;
+                border-bottom: 1px solid black;
+            }
 
             .content {
                 display: flex;
@@ -48,11 +54,34 @@ body,
             color: $x-light-blue;
         }
 
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .external-link {
+            padding: $small $large;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: $xxx-large + 2 * $large;
+            padding: 0 $xxx-large;
+            font-size: $x-large;
+            color: $light-gray;
+            cursor: default;
+            transition: all 0.1s;
+
+            &:hover {
+                color: $x-light-blue;
+                font-weight: bold;
+            }
+        }
+
         #greeting {
             // padding: $xxx-large;
             justify-content: center;
             // align-items: center;
-            font-size: $xxx-large * 4;
+            font-size: $xxx-large * 3;
             color: $light-gray;
             // text-shadow: $xx-small $xx-small 0 transparentize($medium-red, 0.5);
 
@@ -62,6 +91,8 @@ body,
                 .greeting-line {
                     align-self: flex-start;
                 }
+
+                margin-bottom: $xxx-large;
             }
         }
 
@@ -74,7 +105,7 @@ body,
                     line-height: 175%;
                     font-size: $x-large;
                     font-weight: lighter;
-                    margin-bottom: 25vh;
+                    margin-bottom: 20vh;
                 }
 
                 .card {
@@ -82,6 +113,7 @@ body,
                     box-shadow: 0 0 $xxx-large $small $xxx-dark-gray;
                     width: 25vw;
                     padding: $xxx-large * 1.5;
+                    border: 1px solid black;
 
                     + .card {
                         margin-top: -10vh;
@@ -90,9 +122,9 @@ body,
 
                     .title {
                         // text-align: right;
-                        font-size: $xxx-large;
+                        font-size: $xxx-large * 1.25;
                         font-weight: bold;
-                        margin-bottom: $xxx-large * 1.5;
+                        margin-bottom: $xx-large;
                     }
 
                     .card-content {
@@ -133,10 +165,6 @@ body,
         }
 
         #work {
-            .title {
-                font-size: $xxx-large * 2;
-                margin-bottom: 15vh;
-            }
             .content {
                 .project {
                     // margin: 5vh 10vw;
@@ -148,22 +176,26 @@ body,
                     width: 30vw;
                     margin-bottom: 15vh;
 
-                    &:nth-child(3n-2) {
+                    &:nth-child(odd) {
+                        // &:nth-child(3n-2) {
                         align-self: flex-start;
                         align-items: flex-start;
                     }
-                    &:nth-child(3n - 1) {
+                    &:nth-child(even) {
+                        // &:nth-child(3n - 1) {
                         align-self: flex-end;
-                        align-items: flex-end;
+                        // align-items: flex-end;
                     }
-                    &:nth-child(3n) {
-                        align-self: center;
-                        align-items: flex-start;
-                    }
+                    // &:nth-child(3n) {
+                    //     align-self: center;
+                    //     align-items: flex-start;
+                    // }
                     .title {
                         font-size: $xxx-large * 1.5;
                         width: fit-content;
                         margin-bottom: $xxx-large;
+                        padding-bottom: 0;
+                        border: none;
                     }
                     .sub-title {
                         font-size: $xx-large;
@@ -171,6 +203,7 @@ body,
                     }
                     .project-content {
                         width: 100%;
+                        box-shadow: 0 0 $xxx-large $small $xxx-dark-gray;
 
                         .project-image {
                             width: 100%;
@@ -178,18 +211,31 @@ body,
                             background-position: center center;
                             background-size: 100%;
                             background-repeat: no-repeat;
+                            transition: all 0.1s;
+                            border: 1px solid black;
                         }
                         #Glascad-image {
-                            background-image: url("./assets/Glascad.png");
-                        }
-                        #StudentInfo-image {
-                            background-image: url("./assets/Student Info.png");
                         }
                         #NorthStar-image {
-                            background-image: url("./assets/North Star.jpg");
+                            filter: brightness(1.33);
+                        }
+                        #DevMountain-image {
+                            // filter: brightness(0.95);
                         }
                     }
                 }
+            }
+        }
+
+        #contact {
+            &.footer {
+                width: 100vw;
+                height: 20vh;
+                background: $xxx-dark-gray;
+                padding: 2vh 15vw;
+                display: flex;
+                align-items: center;
+                border-top: 1px solid black;
             }
         }
 
@@ -205,11 +251,16 @@ body,
             display: flex;
             align-items: center;
             justify-content: center;
-
-            // writing-mode: vertical-rl;
-
             background: $xxx-dark-gray;
             border-left: 1px solid black;
+            transition: all 0.2s;
+            transition-delay: 0.2s;
+
+            &.hidden {
+                opacity: 0;
+                transform: translateX(100%);
+                transition-delay: 0s;
+            }
 
             .sidebar-link-wrapper {
                 transform: rotate(90deg);
@@ -221,21 +272,6 @@ body,
 
                 .sidebar-link {
                     position: relative;
-                    padding: $small $large;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: $xxx-large + 2 * $large;
-                    padding: 0 $xxx-large;
-                    font-size: $x-large;
-                    color: $light-gray;
-                    cursor: default;
-                    text-decoration: none;
-
-                    &:hover {
-                        color: white;
-                        font-weight: bold;
-                    }
                 }
             }
         }
