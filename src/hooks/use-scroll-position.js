@@ -1,14 +1,18 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 
-export default location => useEffect(() => {
+export default location => {
 
-    const key = `scroll-position: ${location}`;
+    useLayoutEffect(() => {
 
-    const position = localStorage.getItem(key);
+        const key = `scroll-position: ${location}`;
 
-    if (position) window.scrollTo(0, position);
+        const position = localStorage.getItem(key);
 
-    return () => {
-        localStorage.setItem(key, window.scrollY);
-    }
-}, []);
+        if (position) window.scrollTo(0, position);
+
+        return () => {
+            localStorage.setItem(key, window.scrollY);
+            window.addEventListener('beforeunload', localStorage.clear);
+        }
+    }, []);
+}

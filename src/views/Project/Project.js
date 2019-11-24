@@ -21,9 +21,9 @@ export default function Project({
 
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
-        setTimeout(() => {
-            window.scrollTo(0, 0);
-        });
+        // setTimeout(() => {
+        //     window.scrollTo(0, 0);
+        // });
     }, []);
 
     const project = work.find(({ name }) => name.replace(/\s/g, '') === projectName);

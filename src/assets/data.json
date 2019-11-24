@@ -40,19 +40,19 @@
         {
             "name": "Glascad",
             "subtitle": "Shop Drawing Generator",
-            "description": "This is a project I worked on with...",
+            "description": "As a cofounding developer of Glascad, I architected a software solution for generating glass-and-glazing shop drawings, including:\n- researching the nuance of glass-and-glazing from top professionals\n- designing a database to capture the nuance of each manufacturer system\n- designing a system for inputting manufacturer information\n- writing a DXF to SVG converter for bringing AutoCAD files into the browser\n- developing and maintaining a library of React UI components\n- developing data-entry and client applications to generate simple shop drawings\n- training an intern in JavaScript & React\n- Experimenting and developing a process of test-driven-development to ensure reliability",
             "image": "Glascad"
         },
         {
             "name": "North Star",
             "subtitle": "Conference App",
-            "description": "This is a project I worked on with...",
+            "description": "I volunteer as a Mobile Developer and Technical Lead at North Star International.\nNorth Star's conference app is used by hundreds of conference attendees each year, allowing them to preview the conference schedule and select breakout sessions to attend, as well as provide feedback once the conference is over.\nAs a new DevMountain grad in 2018, I began doing minor design updates to the app for the conference in March. Then, for the 2019 conference, I rewrote the app in React Native (originally in AngularJS/Ionic). For the upcoming 2020 conference, I'll be rolling out several upgrades to the existing app.",
             "image": "NorthStar"
         },
         {
             "name": "DevMountain",
             "subtitle": "Student Info API",
-            "description": "This is a project I worked on with...",
+            "description": "While mentoring at DevMountain, I led a team of three jr developers to build an API for gathering and supplying statistics on student progress to management and other internal clients.",
             "image": "StudentInfo"
         }
     ],

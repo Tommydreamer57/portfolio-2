@@ -1,7 +1,9 @@
 @import "./variables.scss";
 
+html,
+#root,
 #App {
-    // transition: background-color 0.5s;
+    // transition: background-color 1.75s;
     background: $xx-dark-gray;
     color: $light-gray;
     font-family: "Source Code Pro";
@@ -13,12 +15,12 @@ section {
 }
 
 b {
-    // transition: color 0.5s;
+    // transition: color 1.75s;
     color: $x-light-red;
 }
 
 strong {
-    // transition: color 0.5s;
+    // transition: color 1.75s;
     color: $x-light-blue;
 }
 
@@ -37,7 +39,7 @@ h2 {
     padding-bottom: 2rem;
     border-bottom: 1px solid black;
     margin-bottom: 15vh;
-    transition: border-color 0.5s;
+    transition: border-color 1.75s;
 }
 
 h3 {
@@ -51,14 +53,14 @@ h4 {
     padding-bottom: 2rem;
     border-bottom: 1px solid black;
     margin-bottom: 2rem;
-    transition: border-color 0.5s;
+    transition: border-color 1.75s;
 }
 
 h5 {
     font-size: 2rem;
     color: $x-light-blue;
     margin-bottom: 2rem;
-    // transition: color 0.5s;
+    // transition: color 1.75s;
 }
 
 h6 {
@@ -72,7 +74,7 @@ p {
 
 img {
     border: 1px solid black;
-    box-shadow: 0 0 3rem 1rem $xxx-dark-gray;
+    box-shadow: 0.5rem 0.5rem 3rem 1rem $xxx-dark-gray;
     transition: box-shadow 0.25s;
 }
 
@@ -97,11 +99,11 @@ img {
 
         img {
             border-color: transparent;
-            box-shadow: 0 0 3rem 1rem $medium-light-gray;
+            box-shadow: 0.5rem 0.5rem 3rem 1rem $medium-light-gray;
         }
     }
 
-    &.transitioning {
+    &.transitioning-out {
         h2,
         h4 {
             border-color: transparent;
@@ -109,7 +111,7 @@ img {
 
         img {
             border-color: transparent;
-            box-shadow: 0 0 3rem 1rem transparent;
+            box-shadow: 0.5rem 0.5rem 3rem 1rem transparent;
         }
     }
 }

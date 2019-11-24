@@ -5,11 +5,26 @@ export default function Text({
     text,
     tagname = 'span',
 }) {
-    const tag = { name: tagname };
+    const hasParagraphs = text.includes('\n');
+    const tag = {
+        name: hasParagraphs ?
+            Fragment
+            :
+            tagname,
+    };
+    const linetag = {
+        name: hasParagraphs ?
+            tagname
+            :
+            Fragment,
+    };
     return (
         <tag.name>
-            {text.split(/\n/g).map((line, i, { length }) => (
-                <Fragment key={i}>
+            {text.split(/\n/g).map((line, i, { length }) => line ? (
+                <linetag.name
+                    key={i}
+                    className={line.startsWith('- ') ? 'li' : ''}
+                >
                     {line.split(/_/g)
                         .map((subText, j) => {
                             const tag = {
@@ -27,17 +42,17 @@ export default function Text({
                                                 :
                                                 'span'
                                         };
-                                        return (
+                                        return subText ? (
                                             <tag.name key={k}>
-                                                {subSubText.split('').map((l, i) => (
+                                                {subSubText.split('').map((l, i) => l ? (
                                                     <TransitionConsumer
                                                         key={i}
                                                     >
                                                         {l}
                                                     </TransitionConsumer>
-                                                ))}
+                                                ) : null)}
                                             </tag.name>
-                                        );
+                                        ) : null;
                                     })}
                                 </tag.name>
                             );
@@ -45,8 +60,8 @@ export default function Text({
                     {i < length - 1 ? (
                         <br />
                     ) : null}
-                </Fragment>
-            ))}
+                </linetag.name>
+            ) : null)}
         </tag.name>
     );
 }

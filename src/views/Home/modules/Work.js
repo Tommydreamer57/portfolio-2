@@ -34,13 +34,13 @@ export default function Work({ selectProject }) {
                             />
                             <strong className="after">
                                 <TransitionConsumer>
-                                    <span>&nbsp;></span>
+                                    &nbsp;>
                                 </TransitionConsumer>
                                 <TransitionConsumer>
-                                    <span>></span>
+                                    >
                                 </TransitionConsumer>
                                 <TransitionConsumer>
-                                    <span>></span>
+                                    >
                                 </TransitionConsumer>
                             </strong>
                         </h3>

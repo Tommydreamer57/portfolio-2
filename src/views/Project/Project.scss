@@ -39,7 +39,21 @@
 
     .content {
         p {
-            margin-bottom: 15vh;
+            &:first-child {
+                margin-top: -7.5vh;
+            }
+
+            margin-bottom: 2rem;
+
+            &.li {
+                + .li {
+                    margin-top: -1.25rem;
+                }
+            }
+
+            &:last-of-type {
+                margin-bottom: 10vh;
+            }
         }
 
         img {

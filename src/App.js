@@ -1,66 +1,25 @@
-import React, { useContext, useState } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
-import { TransitionContext } from './components/TransitionContext';
-import Contact from './modules/Contact';
-import Sidebar from './modules/Sidebar';
-import Home from './views/Home/Home';
-import Project from './views/Project/Project';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import TransitionProvider from './components/TransitionContext';
+import './index.scss';
+import Views from './views/Views';
 
-export default withRouter(function App({
-    location: {
-        pathname,
-    }
-}) {
+const initialDuration = 5000;
+const minDuration = 1000;
 
-    const projectInPathname = !!pathname.match(/\/.+/);
-
-    const {
-        transitioningOut,
-        transitioningIn,
-        push,
-        duration,
-    } = useContext(TransitionContext);
-
-    const selectProject = projectName => {
-        const name = projectName.replace(/\s+/g, '');
-        push(`/${name}`);
-    }
-
+export default function App() {
+    const [duration, setDuration] = useState(initialDuration);
+    useEffect(() => {
+        setTimeout(() => setDuration(1750), initialDuration);
+    }, []);
     return (
-        <div
-            id="App"
-            className={`${
-                projectInPathname ? 'project-selected' : ''
-                } ${
-                transitioningOut || transitioningIn ? 'transitioning' : ''
-                }`}
-            style={{
-                transition: `background-color ${duration / 1500}s`,
-            }}
-        >
-            <Switch>
-                <Route
-                    exact
-                    path="/"
-                    render={props => (
-                        <Home
-                            {...props}
-                            selectProject={selectProject}
-                        />
-                    )}
-                />
-                <Route
-                    path="/:projectName"
-                    render={props => (
-                        <Project
-                            {...props}
-                            selectProject={selectProject}
-                        />
-                    )}
-                />
-            </Switch>
-            <Contact />
-            <Sidebar />
-        </div>
+        <BrowserRouter>
+            <TransitionProvider
+                duration={duration}
+                minDuration={minDuration}
+            >
+                <Views />
+            </TransitionProvider>
+        </BrowserRouter>
     );
-});
+}
