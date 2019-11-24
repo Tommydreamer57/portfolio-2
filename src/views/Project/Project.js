@@ -1,10 +1,13 @@
 import React, { useLayoutEffect } from 'react';
 import { Redirect } from 'react-router-dom';
-import data from '../../assets/data.json';
+import data from '../../assets';
 import Text from '../../components/Text.js';
 import './Project.scss';
 
-const { work } = data;
+const {
+    work,
+    images,
+} = data;
 
 export default function Project({
     match: {
@@ -14,6 +17,8 @@ export default function Project({
     },
     selectProject,
 }) {
+
+    console.log(arguments[0]);
 
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
@@ -32,6 +37,7 @@ export default function Project({
         name,
         subtitle,
         image,
+        description,
     } = project;
 
     return (
@@ -43,16 +49,17 @@ export default function Project({
                         e.preventDefault();
                         selectProject('');
                     }}
+                    href={window.location.href.replace(/^(.*)\/.*?$/, '$1')}
                 >
-                    <h2>
-                        <Text
-                            text={`${name}*:*`}
-                        />
-                        <span className="before">
+                    <h2 className="title">
+                        <strong className="before">
                             <span>{'<'}</span>
                             <span>{'<'}</span>
                             <span>{'<'}&nbsp;</span>
-                        </span>
+                        </strong>
+                        <Text
+                            text={`${name}*:*`}
+                        />
                     </h2>
                 </a>
             </div>
@@ -61,7 +68,13 @@ export default function Project({
                 text={subtitle}
             />
             <div className="content">
-
+                <Text
+                    tagname="p"
+                    text={description}
+                />
+                <img
+                    src={images[image]}
+                />
             </div>
         </section>
     );

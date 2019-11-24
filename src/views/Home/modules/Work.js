@@ -25,16 +25,17 @@ export default function Work({ selectProject }) {
                             e.preventDefault();
                             selectProject(name);
                         }}
+                        href={window.location.href.concat(name.replace(/\s+/g, ''))}
                     >
                         <h3 className="title">
                             <Text
                                 text={name}
                             />
-                            <span className="after">
+                            <strong className="after">
                                 <span>&nbsp;></span>
                                 <span>></span>
                                 <span>></span>
-                            </span>
+                            </strong>
                         </h3>
                         <Text
                             tagname="h5"

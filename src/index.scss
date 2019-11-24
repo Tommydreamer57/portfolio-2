@@ -1,75 +1,104 @@
 @import "./variables.scss";
 
-html,
-body,
-#root {
-    font-family: "Source Code Pro";
+#App {
+    transition: background-color 0.5s;
     background: $xx-dark-gray;
     color: $light-gray;
+    font-family: "Source Code Pro";
+}
 
-    section {
-        padding: 0 15vw;
-        margin-bottom: 22.5vh;
-    }
+section {
+    padding: 0 15vw;
+    margin-bottom: 22.5vh;
+}
 
-    b {
-        color: $x-light-red;
-    }
+b {
+    transition: color 0.5s;
+    color: $x-light-red;
+}
 
-    strong {
-        color: $x-light-blue;
-    }
+strong {
+    transition: color 0.5s;
+    color: $x-light-blue;
+}
 
-    a {
-        text-decoration: none;
-        color: inherit;
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.1s;
+}
 
-        &:hover {
-            color: $x-light-blue;
+h1 {
+    font-size: 7.5rem;
+}
+
+h2 {
+    font-size: 4.75rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid black;
+    margin-bottom: 15vh;
+    transition: background-color 0.5s;
+}
+
+h3 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 3.125rem;
+    font-weight: bold;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid black;
+    margin-bottom: 2rem;
+    transition: background-color 0.5s;
+}
+
+h5 {
+    font-size: 2rem;
+    color: $x-light-blue;
+    margin-bottom: 2rem;
+    transition: color 0.5s;
+    transition: color 0.5s;
+}
+
+h6 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.675rem;
+    line-height: 150%;
+}
+
+img {
+    border: 1px solid black;
+    box-shadow: 0 0 3rem 1rem $xxx-dark-gray;
+    transition: box-shadow 0.5s;
+}
+
+#App {
+    &.project-selected {
+        background: $xx-light-gray;
+        color: $dark-gray;
+
+        b {
+            color: $light-red;
         }
-    }
 
-    h1 {
-        font-size: 7.5rem;
-    }
+        strong,
+        h5 {
+            color: $light-blue;
+        }
 
-    h2 {
-        font-size: 4.75rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid black;
-        margin-bottom: 15vh;
-    }
+        h2,
+        h4 {
+            border-bottom: 1px solid $medium-gray;
+        }
 
-    h3 {
-        font-size: 4rem;
-        margin-bottom: 2rem;
-    }
-
-    h4 {
-        font-size: 3.125rem;
-        font-weight: bold;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid black;
-        margin-bottom: 2rem;
-    }
-
-    h5 {
-        font-size: 2rem;
-        color: $x-light-blue;
-        margin-bottom: 2rem;
-    }
-
-    h6 {
-        font-size: 2rem;
-    }
-
-    p {
-        font-size: 1.675rem;
-        line-height: 150%;
-    }
-
-    img {
-        border: 1px solid black;
-        box-shadow: 0 0 3rem 1rem $xxx-dark-gray;
+        img {
+            border: none;
+            box-shadow: 0 0 3rem 1rem $medium-light-gray;
+        }
     }
 }

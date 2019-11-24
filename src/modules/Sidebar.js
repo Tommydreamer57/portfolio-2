@@ -1,23 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import data from '../assets/data.json';
+import { withRouter } from 'react-router-dom';
+import data from '../assets';
+import Text from '../components/Text.js';
 import './Sidebar.scss';
 
 const { links } = data;
 
-export default function Sidebar() {
+export default withRouter(function Sidebar({ location: { pathname } }) {
 
-    const [hidden, setHidden] = useState(false);
+    const inProject = !!pathname.match(/\/.+/);
+
+    const [hidden, setHidden] = useState(inProject);
 
     useEffect(() => {
+        if (inProject) setHidden(true);
+        else {
+            const hideSidebar = () => {
+                const { scrollY, innerHeight } = window;
+                setHidden(scrollY > innerHeight * 0.5);
+            }
 
-        const hideSidebar = () => {
-            const { scrollY, innerHeight } = window;
-            setHidden(scrollY > innerHeight * 0.5);
+            window.addEventListener('scroll', hideSidebar);
+            return () => window.removeEventListener('scroll', hideSidebar);
         }
-
-        window.addEventListener('scroll', hideSidebar);
-        return () => window.removeEventListener('scroll', hideSidebar);
-    }, []);
+    }, [pathname]);
 
     return (
         <nav
@@ -32,11 +38,13 @@ export default function Sidebar() {
                             className="sidebar-link external-link"
                             href={href}
                         >
-                            {name}
+                            <Text
+                                text={name}
+                            />
                         </a>
                     </li>
                 ))}
             </ul>
         </nav>
     );
-}
+})

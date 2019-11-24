@@ -40,16 +40,19 @@
         {
             "name": "Glascad",
             "subtitle": "Shop Drawing Generator",
+            "description": "This is a project I worked on with...",
             "image": "Glascad"
         },
         {
             "name": "North Star",
             "subtitle": "Conference App",
+            "description": "This is a project I worked on with...",
             "image": "NorthStar"
         },
         {
             "name": "DevMountain",
             "subtitle": "Student Info API",
+            "description": "This is a project I worked on with...",
             "image": "StudentInfo"
         }
     ],

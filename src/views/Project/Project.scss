@@ -1,5 +1,49 @@
 @import "../../variables";
 
 #project {
-    margin-top: 20vh;
+    padding-top: 20vh;
+
+    .title {
+        position: relative;
+
+        .before {
+            position: absolute;
+            left: 0;
+            transform: translateX(-100%);
+
+            span {
+                opacity: 0;
+                transition: all 0.1s;
+
+                &:nth-child(1) {
+                    transition-delay: 0.2s;
+                }
+                &:nth-child(2) {
+                    transition-delay: 0.1s;
+                }
+            }
+        }
+
+        &:hover {
+            .before {
+                span {
+                    opacity: 1;
+                }
+            }
+        }
+
+        + h5 {
+            transform: translateY(calc(-15vh + 2rem));
+        }
+    }
+
+    .content {
+        p {
+            margin-bottom: 15vh;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
 }

@@ -14,7 +14,7 @@ nav {
     justify-content: center;
     background: $xxx-dark-gray;
     border-left: 1px solid black;
-    transition: all 0.4s;
+    transition: all 0.5s;
 
     &.hidden {
         opacity: 0;
@@ -40,12 +40,27 @@ nav {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                &:hover {
+                    color: $x-light-blue;
+                }
             }
             &:first-child {
                 a {
                     padding-left: 3rem;
                 }
             }
+        }
+    }
+}
+
+.project-selected {
+    nav {
+        background: $x-light-gray;
+        border-right: 1px solid $medium-gray;
+
+        a:hover {
+            color: $light-blue;
         }
     }
 }

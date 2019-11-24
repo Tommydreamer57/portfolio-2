@@ -16,5 +16,21 @@ footer {
         &:first-child {
             margin-left: -3rem;
         }
+
+        &:hover {
+            color: $x-light-blue;
+        }
     }
 }
+
+.project-selected {
+    footer {
+        background: $x-light-gray;
+        border-top: 1px solid $medium-gray;
+
+        a:hover {
+            color: $light-blue;
+        }
+    }
+}
+
