@@ -1,27 +1,35 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import Contact from './modules/Contact';
+import Sidebar from './modules/Sidebar';
 import Home from './views/Home/Home';
-import Contact from './views/Home/Contact';
 import Project from './views/Project/Project';
 
-export default function App() {
+export default withRouter(function App({ history }) {
+
+    const selectProject = projectName => {
+        const name = projectName.replace(/\s+/g, '');
+        history.push(`/${name}`);
+    }
+
     return (
-        <BrowserRouter>
-            <div id="App">
-                <Switch>
-                    <Route
-                        exact
-                        path="/"
-                        component={Home}
+        <div id="App">
+            <Switch>
+                <Route exact path="/" render={props => (
+                    <Home
+                        {...props}
+                        selectProject={selectProject}
                     />
-                    <Route
-                        path="/:projectName"
-                        component={Project}
+                )} />
+                <Route path="/:projectName" render={props => (
+                    <Project
+                        {...props}
+                        selectProject={selectProject}
                     />
-                </Switch>
-                <Contact />
-            </div>
-        </BrowserRouter>
+                )} />
+            </Switch>
+            <Contact />
+            <Sidebar />
+        </div>
     );
-}
+});

@@ -1,14 +1,12 @@
 import React from 'react';
-import data from '../../data.json';
+import data from '../assets';
+import './Contact.scss';
 
 const { links } = data;
 
 export default function Contact() {
     return (
-        <div
-            id="contact"
-            className="footer"
-        >
+        <footer>
             {links.map(({ name, href }) => (
                 <a
                     target="blank"
@@ -18,6 +16,6 @@ export default function Contact() {
                     {name}
                 </a>
             ))}
-        </div>
+        </footer>
     );
 }

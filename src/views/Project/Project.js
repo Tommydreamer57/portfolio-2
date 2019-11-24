@@ -1,6 +1,8 @@
 import React, { useLayoutEffect } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import data from '../../data.json';
+import { Redirect } from 'react-router-dom';
+import data from '../../assets/data.json';
+import Text from '../../components/Text.js';
+import './Project.scss';
 
 const { work } = data;
 
@@ -10,6 +12,7 @@ export default function Project({
             projectName,
         },
     },
+    selectProject,
 }) {
 
     useLayoutEffect(() => {
@@ -27,40 +30,39 @@ export default function Project({
 
     const {
         name,
-        subTitle,
+        subtitle,
         image,
     } = project;
 
     return (
-        <div
-            id="project"
-            className="view"
-        >
+        <section id="project">
             <div className="project-title title">
-                <Link
-                    to="/"
+                <a
                     className="project-name"
+                    onClick={e => {
+                        e.preventDefault();
+                        selectProject('');
+                    }}
                 >
-                    <span>
-                        {name}
-                    </span>
-                    <span className="red">:</span>
-                </Link>
-                <span className="before">
-                    <span>{'<'}</span>
-                    <span>{'<'}</span>
-                    <span>{'<'}&nbsp;</span>
-                </span>
-                {/* <span className="subtitle blue">
-                    {subTitle}
-                </span> */}
+                    <h2>
+                        <Text
+                            text={`${name}*:*`}
+                        />
+                        <span className="before">
+                            <span>{'<'}</span>
+                            <span>{'<'}</span>
+                            <span>{'<'}&nbsp;</span>
+                        </span>
+                    </h2>
+                </a>
             </div>
-            <div className="sub-title blue">
-                {subTitle}
-            </div>
+            <Text
+                tagname="h5"
+                text={subtitle}
+            />
             <div className="content">
 
             </div>
-        </div>
+        </section>
     );
 }

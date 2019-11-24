@@ -1,0 +1,51 @@
+@import "../variables";
+
+$nav-width: 5rem;
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: $nav-width;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $xxx-dark-gray;
+    border-left: 1px solid black;
+    transition: all 0.4s;
+
+    &.hidden {
+        opacity: 0;
+        transform: translateX(100%);
+        transition-delay: 0.2s;
+    }
+
+    ul {
+        height: $nav-width;
+        width: 100vh;
+        min-width: 100vh;
+        display: flex;
+        transform: rotate(90deg);
+
+        li {
+            height: 100%;
+            position: relative;
+            display: flex;
+
+            a {
+                font-size: 1.5rem;
+                padding: 0 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &:first-child {
+                a {
+                    padding-left: 3rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@import "../../../variables";
+
+#greeting {
+    position: relative;
+    height: 90vh;
+
+    h1 {
+        position: absolute;
+        bottom: 50%;
+        transform: translateY(50%);
+    }
+}

@@ -1,20 +1,18 @@
 import React from 'react';
-import About from './About';
-import Landing from './Landing';
-import Work from './Work';
 import useScrollPosition from '../../hooks/use-scroll-position';
-import Sidebar from '../../components/Sidebar';
+import About from './modules/About';
+import Greeting from './modules/Greeting';
+import Work from './modules/Work';
 
-export default function Home() {
+export default function Home({ selectProject }) {
 
     useScrollPosition('Home');
 
     return (
         <>
-            <Landing />
+            <Greeting />
             <About />
-            <Work />
-            <Sidebar />
+            <Work selectProject={selectProject} />
         </>
     );
 }

@@ -1,21 +1,45 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-export default function Text({ text }) {
+export default function Text({
+    text,
+    tagname = 'span',
+}) {
+    const tag = { name: tagname };
     return (
-        <>
-            {text.split(/_/g)
-                .map((subText, i) => (
-                    <span
-                        key={i}
-                        className={i % 2 ? 'blue' : ''}
-                    >
-                        {subText.split(/\*/g).map((subSubText, i) => (
-                            <span className={i % 2 ? 'red' : ''}>
-                                {subSubText}
-                            </span>
-                        ))}
-                    </span>
-                ))}
-        </>
+        <tag.name>
+            {text.split(/\n/g).map((line, i, { length }) => (
+                <Fragment key={i}>
+                    {line.split(/_/g)
+                        .map((subText, j) => {
+                            const tag = {
+                                name: j % 2 ?
+                                    'strong'
+                                    :
+                                    'span'
+                            };
+                            return (
+                                <tag.name key={j}>
+                                    {subText.split(/\*/g).map((subSubText, k) => {
+                                        const tag = {
+                                            name: k % 2 ?
+                                                'b'
+                                                :
+                                                'span'
+                                        };
+                                        return (
+                                            <tag.name key={k}>
+                                                {subSubText}
+                                            </tag.name>
+                                        );
+                                    })}
+                                </tag.name>
+                            );
+                        })}
+                    {i < length - 1 ? (
+                        <br />
+                    ) : null}
+                </Fragment>
+            ))}
+        </tag.name>
     );
 }

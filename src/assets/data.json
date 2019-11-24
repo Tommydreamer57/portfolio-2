@@ -1,5 +1,5 @@
 {
-    "greeting": "Hello*,*\nI'm _Tommy_*.*",
+    "greeting": "Hello*,* I'm _Tommy_*.*",
     "about": "I am a full-stack web developer based in _Provo, Utah_*.*\nI am a _linguist_ by heart and a _programmer_ by trade*.*\nI love monkeys, books, and _clean code_*.*",
     "stack": [
         {
@@ -39,17 +39,17 @@
     "work": [
         {
             "name": "Glascad",
-            "subTitle": "Shop Drawing Generator",
+            "subtitle": "Shop Drawing Generator",
             "image": "Glascad"
         },
         {
             "name": "North Star",
-            "subTitle": "Conference App",
+            "subtitle": "Conference App",
             "image": "NorthStar"
         },
         {
             "name": "DevMountain",
-            "subTitle": "Student Info API",
+            "subtitle": "Student Info API",
             "image": "StudentInfo"
         }
     ],

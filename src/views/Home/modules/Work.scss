@@ -1,0 +1,61 @@
+@import "../../../variables";
+
+#work {
+    .content {
+        display: flex;
+        flex-direction: column;
+
+        .project {
+            width: 30vw;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10vh;
+
+            &:nth-child(even) {
+                align-self: flex-end;
+            }
+
+            .title {
+                position: relative;
+
+                h3 {
+                    display: inline;
+                }
+
+                .after {
+                    span {
+                        opacity: 0;
+                        color: $x-light-blue;
+                        transition: all 0.1s;
+
+                        &:nth-child(2) {
+                            transition-delay: 0.1s;
+                        }
+                        &:nth-child(3) {
+                            transition-delay: 0.2s;
+                        }
+                    }
+                }
+            }
+
+            img {
+                width: 100%;
+                // width: 30vw;
+            }
+
+            &:hover {
+                .title {
+                    &:not(.after) {
+                        color: $light-gray;
+                    }
+
+                    .after {
+                        span {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

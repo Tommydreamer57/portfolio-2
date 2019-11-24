@@ -3,342 +3,73 @@
 html,
 body,
 #root {
-    width: 100%;
-    overflow-x: hidden;
-    font-family: "Source Code Pro", "Shojumaru", "Aladin", "Sedgwick Ave Display", "Ubuntu Mono", "Lacquer", "Itim",
-        "Anonymous Pro", "McLaren", "Maven Pro", monospace;
+    font-family: "Source Code Pro";
     background: $xx-dark-gray;
     color: $light-gray;
 
-    #App {
-        width: 100%;
+    section {
+        padding: 0 15vw;
+        margin-bottom: 22.5vh;
+    }
 
-        .view {
-            // height: 90vh;
-            width: 70vw;
-            padding: 15vh 15vw;
-            margin-bottom: 15vh;
-            display: flex;
-            flex-direction: column;
+    b {
+        color: $x-light-red;
+    }
 
-            &:first-child {
-                margin-top: 25vh;
-            }
-            // &:last-child {
-            //     margin-bottom: 45vh;
-            // }
+    strong {
+        color: $x-light-blue;
+    }
 
-            .title {
-                font-size: $xxx-large * 2;
-                margin-bottom: 15vh;
-                padding-bottom: $xx-large;
-                border-bottom: 1px solid black;
-            }
+    a {
+        text-decoration: none;
+        color: inherit;
 
-            .content {
-                display: flex;
-                flex-direction: column;
-
-                > :nth-child(odd) {
-                    align-self: flex-end;
-                    align-items: flex-end;
-                }
-            }
-        }
-
-        .red {
-            color: $light-red;
-        }
-
-        .blue {
+        &:hover {
             color: $x-light-blue;
         }
+    }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+    h1 {
+        font-size: 7.5rem;
+    }
 
-        .external-link {
-            padding: $small $large;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: $xxx-large + 2 * $large;
-            padding: 0 $xxx-large;
-            font-size: $x-large;
-            color: $light-gray;
-            cursor: default;
-            transition: all 0.1s;
+    h2 {
+        font-size: 4.75rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid black;
+        margin-bottom: 15vh;
+    }
 
-            &:hover {
-                color: $x-light-blue;
-                font-weight: bold;
-            }
-        }
+    h3 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
 
-        #greeting {
-            // padding: $xxx-large;
-            justify-content: center;
-            // align-items: center;
-            font-size: $xxx-large * 3;
-            color: $light-gray;
-            // text-shadow: $xx-small $xx-small 0 transparentize($medium-red, 0.5);
+    h4 {
+        font-size: 3.125rem;
+        font-weight: bold;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid black;
+        margin-bottom: 2rem;
+    }
 
-            .content {
-                // margin-left: 25vw;
+    h5 {
+        font-size: 2rem;
+        color: $x-light-blue;
+        margin-bottom: 2rem;
+    }
 
-                .greeting-line {
-                    align-self: flex-start;
-                }
+    h6 {
+        font-size: 2rem;
+    }
 
-                margin-bottom: $xxx-large;
-            }
-        }
+    p {
+        font-size: 1.675rem;
+        line-height: 150%;
+    }
 
-        #about {
-            .content {
-                // margin-right: 15vw;
-                align-items: flex-start;
-
-                > p {
-                    line-height: 175%;
-                    font-size: $x-large;
-                    font-weight: lighter;
-                    margin-bottom: 20vh;
-                }
-
-                .card {
-                    background: mix($dark-gray, $x-dark-gray, 0.5);
-                    box-shadow: 0 0 $xxx-large $small $xxx-dark-gray;
-                    width: 25vw;
-                    padding: $xxx-large * 1.5;
-                    border: 1px solid black;
-
-                    + .card {
-                        margin-top: -10vh;
-                        margin-left: 5%;
-                    }
-
-                    .title {
-                        // text-align: right;
-                        font-size: $xxx-large * 1.25;
-                        font-weight: bold;
-                        margin-bottom: $xx-large;
-                    }
-
-                    .card-content {
-                        // margin-left: 10vw;
-                        // height: 80vh;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
-                        font-size: $x-large;
-
-                        .card-item {
-                            // width: 45vw;
-                            display: flex;
-                            justify-content: space-between;
-
-                            &:not(:last-child) {
-                                margin-bottom: $xxx-large;
-                            }
-
-                            .bullet {
-                                margin-right: $xx-large;
-                            }
-                        }
-                    }
-                }
-
-                // #my-stack {
-                //     margin-left: 15vw;
-                // }
-
-                // #my-skills {
-                //     .card-content {
-                //         .card-item {
-                //         }
-                //     }
-                // }
-            }
-        }
-
-        #work {
-            .content {
-                .project {
-                    // margin: 5vh 10vw;
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    align-content: flex-start;
-                    flex-direction: column;
-                    width: 30vw;
-                    margin-bottom: 5vh;
-
-                    &:nth-child(odd) {
-                        // &:nth-child(3n-2) {
-                        align-self: flex-start;
-                        align-items: flex-start;
-                    }
-                    &:nth-child(even) {
-                        // &:nth-child(3n - 1) {
-                        align-self: flex-end;
-                        // align-items: flex-end;
-                    }
-                    // &:nth-child(3n) {
-                    //     align-self: center;
-                    //     align-items: flex-start;
-                    // }
-                    .title {
-                        font-size: $xxx-large * 1.5;
-                        width: fit-content;
-                        margin-bottom: $xxx-large;
-                        padding-bottom: 0;
-                        border: none;
-
-                        .after {
-                            span {
-                                opacity: 0;
-                                color: $x-light-blue;
-                                transition: all 0.1s;
-
-                                &:nth-child(2) {
-                                    transition-delay: 0.1s;
-                                }
-                                &:nth-child(3) {
-                                    transition-delay: 0.2s;
-                                }
-                            }
-                        }
-                    }
-                    .sub-title {
-                        font-size: $xx-large;
-                        margin-bottom: $xxx-large;
-                    }
-                    .project-content {
-                        width: 100%;
-                        box-shadow: 0 0 $xxx-large $small $xxx-dark-gray;
-
-                        .project-image {
-                            width: 100%;
-                            background: black;
-                            background-position: center center;
-                            background-size: 100%;
-                            background-repeat: no-repeat;
-                            transition: all 0.1s;
-                            border: 1px solid black;
-                        }
-                        #Glascad-image {
-                        }
-                        #NorthStar-image {
-                            filter: contrast(1.125);
-                        }
-                        #DevMountain-image {
-                            // filter: brightness(0.95);
-                        }
-                    }
-
-                    &:hover {
-                        .title {
-                            .after {
-                                span {
-                                    opacity: 1;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        #project {
-            .project-title {
-                position: relative;
-
-                .project-name {
-                    + .before {
-                        position: absolute;
-                        left: 0;
-                        transform: translateX(-100%);
-
-                        span {
-                            opacity: 0;
-                            color: $x-light-blue;
-                            transition: all 0.1s;
-
-                            &:first-child {
-                                transition-delay: 0.2s;
-                            }
-                            &:nth-child(2) {
-                                transition-delay: 0.1s;
-                            }
-                        }
-                    }
-
-                    &:hover {
-                        + .before {
-                            span {
-                                opacity: 1;
-                            }
-                        }
-                    }
-                }
-
-                + .sub-title {
-                    font-size: $xxx-large;
-                    margin-top: -10vh;
-                    margin-bottom: 10vh;
-                }
-            }
-        }
-
-        #contact {
-            &.footer {
-                width: 100vw;
-                height: 20vh;
-                background: $xxx-dark-gray;
-                padding: 2vh 15vw;
-                display: flex;
-                align-items: center;
-                border-top: 1px solid black;
-            }
-        }
-
-        #sidebar {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            height: 100vh;
-            width: $xxx-large;
-            max-height: 100vh;
-            padding: $large;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: $xxx-dark-gray;
-            border-left: 1px solid black;
-            transition: all 0.2s;
-
-            &.hidden {
-                opacity: 0;
-                transform: translateX(100%);
-                transition-delay: 0.2s;
-            }
-
-            .sidebar-link-wrapper {
-                transform: rotate(90deg);
-                width: 100vh;
-                min-width: 100vh;
-                display: flex;
-                // justify-content: space-evenly;
-                font-family: "Anonymous Pro";
-
-                .sidebar-link {
-                    position: relative;
-                }
-            }
-        }
+    img {
+        border: 1px solid black;
+        box-shadow: 0 0 3rem 1rem $xxx-dark-gray;
     }
 }
