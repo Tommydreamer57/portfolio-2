@@ -6,12 +6,9 @@ export default location => useEffect(() => {
 
     const position = localStorage.getItem(key);
 
-    console.log({ location, key, position });
-
     if (position) window.scrollTo(0, position);
 
     return () => {
-        console.log({ location, key, position, scrollY: window.scrollY });
         localStorage.setItem(key, window.scrollY);
     }
 }, []);

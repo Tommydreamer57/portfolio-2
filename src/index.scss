@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 #App {
-    transition: background-color 0.5s;
+    // transition: background-color 0.5s;
     background: $xx-dark-gray;
     color: $light-gray;
     font-family: "Source Code Pro";
@@ -13,12 +13,12 @@ section {
 }
 
 b {
-    transition: color 0.5s;
+    // transition: color 0.5s;
     color: $x-light-red;
 }
 
 strong {
-    transition: color 0.5s;
+    // transition: color 0.5s;
     color: $x-light-blue;
 }
 
@@ -37,7 +37,7 @@ h2 {
     padding-bottom: 2rem;
     border-bottom: 1px solid black;
     margin-bottom: 15vh;
-    transition: background-color 0.5s;
+    transition: border-color 0.5s;
 }
 
 h3 {
@@ -51,15 +51,14 @@ h4 {
     padding-bottom: 2rem;
     border-bottom: 1px solid black;
     margin-bottom: 2rem;
-    transition: background-color 0.5s;
+    transition: border-color 0.5s;
 }
 
 h5 {
     font-size: 2rem;
     color: $x-light-blue;
     margin-bottom: 2rem;
-    transition: color 0.5s;
-    transition: color 0.5s;
+    // transition: color 0.5s;
 }
 
 h6 {
@@ -74,7 +73,7 @@ p {
 img {
     border: 1px solid black;
     box-shadow: 0 0 3rem 1rem $xxx-dark-gray;
-    transition: box-shadow 0.5s;
+    transition: box-shadow 0.25s;
 }
 
 #App {
@@ -97,8 +96,20 @@ img {
         }
 
         img {
-            border: none;
+            border-color: transparent;
             box-shadow: 0 0 3rem 1rem $medium-light-gray;
+        }
+    }
+
+    &.transitioning {
+        h2,
+        h4 {
+            border-color: transparent;
+        }
+
+        img {
+            border-color: transparent;
+            box-shadow: 0 0 3rem 1rem transparent;
         }
     }
 }

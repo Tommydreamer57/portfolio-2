@@ -11,7 +11,7 @@
             left: 0;
             transform: translateX(-100%);
 
-            span {
+            > span {
                 opacity: 0;
                 transition: all 0.1s;
 

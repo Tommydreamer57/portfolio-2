@@ -1,5 +1,6 @@
 import React from 'react';
 import data from '../assets';
+import Text from '../components/Text';
 import './Contact.scss';
 
 const { links } = data;
@@ -13,7 +14,9 @@ export default function Contact() {
                     href={href}
                     className="external-link"
                 >
-                    {name}
+                    <Text
+                        text={name}
+                    />
                 </a>
             ))}
         </footer>

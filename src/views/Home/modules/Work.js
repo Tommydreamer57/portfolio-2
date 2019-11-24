@@ -2,6 +2,7 @@ import React from 'react';
 import data from '../../../assets';
 import Text from '../../../components/Text';
 import './Work.scss';
+import { TransitionConsumer } from '../../../components/TransitionContext';
 
 const {
     work,
@@ -32,18 +33,28 @@ export default function Work({ selectProject }) {
                                 text={name}
                             />
                             <strong className="after">
-                                <span>&nbsp;></span>
-                                <span>></span>
-                                <span>></span>
+                                <TransitionConsumer>
+                                    <span>&nbsp;></span>
+                                </TransitionConsumer>
+                                <TransitionConsumer>
+                                    <span>></span>
+                                </TransitionConsumer>
+                                <TransitionConsumer>
+                                    <span>></span>
+                                </TransitionConsumer>
                             </strong>
                         </h3>
                         <Text
                             tagname="h5"
                             text={subtitle}
                         />
-                        <img
-                            src={images[image]}
-                        />
+                        <TransitionConsumer
+                            tagname="div"
+                        >
+                            <img
+                                src={images[image]}
+                            />
+                        </TransitionConsumer>
                     </a>
                 ))}
             </div>

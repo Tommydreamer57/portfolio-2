@@ -1,29 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
+import { TransitionContext } from './components/TransitionContext';
 import Contact from './modules/Contact';
 import Sidebar from './modules/Sidebar';
 import Home from './views/Home/Home';
 import Project from './views/Project/Project';
 
-export default withRouter(function App({ history, location: { pathname } }) {
+export default withRouter(function App({
+    location: {
+        pathname,
+    }
+}) {
 
     const projectInPathname = !!pathname.match(/\/.+/);
 
-    const [projectSelected, setProject] = useState(projectInPathname);
+    const {
+        transitioningOut,
+        transitioningIn,
+        push,
+        duration,
+    } = useContext(TransitionContext);
 
     const selectProject = projectName => {
-        setProject(!!projectName);
-
-        setTimeout(() => {
-            const name = projectName.replace(/\s+/g, '');
-            history.push(`/${name}`);
-        }, 250);
+        const name = projectName.replace(/\s+/g, '');
+        push(`/${name}`);
     }
 
     return (
         <div
             id="App"
-            className={projectSelected ? 'project-selected' : ''}
+            className={`${
+                projectInPathname ? 'project-selected' : ''
+                } ${
+                transitioningOut || transitioningIn ? 'transitioning' : ''
+                }`}
+            style={{
+                transition: `background-color ${duration / 1500}s`,
+            }}
         >
             <Switch>
                 <Route

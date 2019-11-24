@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import data from '../../assets';
 import Text from '../../components/Text.js';
 import './Project.scss';
+import { TransitionConsumer } from '../../components/TransitionContext';
 
 const {
     work,
@@ -17,8 +18,6 @@ export default function Project({
     },
     selectProject,
 }) {
-
-    console.log(arguments[0]);
 
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
@@ -53,9 +52,15 @@ export default function Project({
                 >
                     <h2 className="title">
                         <strong className="before">
-                            <span>{'<'}</span>
-                            <span>{'<'}</span>
-                            <span>{'<'}&nbsp;</span>
+                            <TransitionConsumer>
+                                {'<'}
+                            </TransitionConsumer>
+                            <TransitionConsumer>
+                                {'<'}
+                            </TransitionConsumer>
+                            <TransitionConsumer>
+                                {'<'}&nbsp;
+                            </TransitionConsumer>
                         </strong>
                         <Text
                             text={`${name}*:*`}
@@ -72,9 +77,13 @@ export default function Project({
                     tagname="p"
                     text={description}
                 />
-                <img
-                    src={images[image]}
-                />
+                <TransitionConsumer
+                    tagname="div"
+                >
+                    <img
+                        src={images[image]}
+                    />
+                </TransitionConsumer>
             </div>
         </section>
     );

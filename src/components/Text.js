@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { TransitionConsumer } from './TransitionContext';
 
 export default function Text({
     text,
@@ -28,7 +29,13 @@ export default function Text({
                                         };
                                         return (
                                             <tag.name key={k}>
-                                                {subSubText}
+                                                {subSubText.split('').map((l, i) => (
+                                                    <TransitionConsumer
+                                                        key={i}
+                                                    >
+                                                        {l}
+                                                    </TransitionConsumer>
+                                                ))}
                                             </tag.name>
                                         );
                                     })}
